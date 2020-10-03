@@ -42,7 +42,9 @@ window.onload = function () {
 
     function caricaDati() {
         // letura e caricamento dati
-        for (const item of jsonVet) {
+        for (let i = 0; i < jsonVet.length; i++) {
+            let item = jsonVet[i];
+
             let _tr = document.createElement("tr");
             _table.appendChild(_tr);
             let _td;
@@ -66,7 +68,24 @@ window.onload = function () {
             _td = document.createElement("td");
             _td.innerHTML = item.price;
             _tr.appendChild(_td);
+
+            // creazione pulsanti elimina
+            _td = document.createElement("td");
+            let _button = document.createElement("button");
+            _button.innerHTML = "Elimina";
+            _td.appendChild(_button)
+            _tr.appendChild(_td);
+            _button.addEventListener("click", eliminaRecord);
+            _button.recordDaEliminare = i;  // mi creo un campo dove salvo l'indice del pulsante
         }
+    }
+
+    // elimino il record
+    function eliminaRecord() {
+        let pos = this.recordDaEliminare;
+        jsonVet.splice(pos, 1);
+        localStorage.setItem("bookstore_json", JSON.stringify(jsonVet));
+        window.location.reload();
     }
 
     function visualizzaDettagli() {
@@ -90,25 +109,24 @@ window.onload = function () {
 
     function creaPulsanti() {
         let _divPulsantiNavigazione = document.createElement("div");
-        _divPulsantiNavigazione.setAttribute("class", "pulsantiNavigazione");
+        _divPulsantiNavigazione.setAttribute("class", "contenitorePulsantiNavigazione");
         _body.appendChild(_divPulsantiNavigazione);
 
         // vettore enumerativo
-        let nomiPulsanti = ["Primo", "Indietro", "Avanti", "Ultimo"];
+        let nomiPulsanti = ["Primo", "Indietro", "Avanti", "Ultimo", "Aggiungi", "Elimina per categoria", ""];
         for (const item of nomiPulsanti) {
             let _button = document.createElement("button");
             //assegno come id il nome stesso del pulsante in modo che sia accessibile alle altre procedure
             _button.id = item;
+            _button.setAttribute("class", "pulsantiNavigazione");
             _button.innerHTML = item;
-            _button.style.padding = "5px, 10px";
-            _button.style.margin = "3px";
-            _button.addEventListener("click", navigazione);
+            _button.addEventListener("click", gestionePulsanti);
             _divPulsantiNavigazione.appendChild(_button);
         }
         document.getElementById("Indietro").disabled = true;
     }
 
-    function navigazione() {
+    function gestionePulsanti() {
         let _indietro = document.getElementById("Indietro");
         let _avanti = document.getElementById("Avanti");
         // per capire che cosa fare vado a leggermi il testo del pulsante premuto
@@ -136,6 +154,27 @@ window.onload = function () {
                 indicelibroCorrente = jsonVet.length - 1;
                 _avanti.disabled = true;
                 _indietro.disabled = false;
+                break;
+            case 'Aggiungi':
+                window.open("pagina2.html");
+                break;
+            case 'Elimina per categoria':
+                let categoria = prompt("Inserisci la categoria da cancellare: ");
+                // per cancellare la categoria usiamo splice
+                let qta = 0;
+                for (let i = jsonVet.length - 1; i >= 0; i--) {
+                    if (jsonVet[i].category == categoria) {
+                        jsonVet.splice(i, 1);
+                        qta++;
+                    }
+                }
+                if (qta > 0) {
+                    alert("Cancellati " + qta + " record");
+                    // scriviamo nel local storage
+                    localStorage.setItem("bookstore_json", JSON.stringify(jsonVet));  //lo serializziamo 
+                    window.location.reload();
+                } else
+                    alert("Nessun record trovato");
                 break;
         }
         visualizzaDettagli();

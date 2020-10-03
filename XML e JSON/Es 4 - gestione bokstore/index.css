@@ -51,8 +51,18 @@ th{
     overflow: auto;
 }
 
-.pulsantiNavigazione{
+.contenitorePulsantiNavigazione{
     margin: 10px auto;
-    width: 300px;
+    width: 400px;
     text-align: center;
+}
+
+.pulsantiNavigazione{
+    padding: 5px 10px;
+    width: 100px;
+    margin: 5px 0;
+}
+
+.pulsantiNavigazione:last-of-type{
+    width: 180px;
 }

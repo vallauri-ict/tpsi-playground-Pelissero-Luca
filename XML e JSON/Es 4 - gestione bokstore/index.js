@@ -32,7 +32,7 @@ window.onload = function () {
         // Creazione dell'instestazione
         let _tr = document.createElement("tr");
         _table.appendChild(_tr);
-        let intestazioni = ["title", "author", "category", "price"];
+        let intestazioni = ["title", "author", "category", "price", ""];
         for (let i = 0; i < intestazioni.length; i++) {
             let _th = document.createElement("th");
             _th.innerHTML = intestazioni[i];
@@ -113,7 +113,7 @@ window.onload = function () {
         _body.appendChild(_divPulsantiNavigazione);
 
         // vettore enumerativo
-        let nomiPulsanti = ["Primo", "Indietro", "Avanti", "Ultimo", "Aggiungi", "Elimina per categoria", ""];
+        let nomiPulsanti = ["Primo", "Indietro", "Avanti", "Ultimo", "Aggiungi", "Elimina per categoria"];
         for (const item of nomiPulsanti) {
             let _button = document.createElement("button");
             //assegno come id il nome stesso del pulsante in modo che sia accessibile alle altre procedure

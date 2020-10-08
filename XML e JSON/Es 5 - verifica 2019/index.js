@@ -1,6 +1,6 @@
 "use strict"
 
-window.onload = function () {
+window.onload = function() {
     let intestazioni = ["", "id", "name", "alcoholic", "main ingradient", ""];
     let larghezze = [40, 40, 60, 70, 70, 40];
     let _table = this.document.getElementById("table");
@@ -34,7 +34,7 @@ window.onload = function () {
         let vetIngradienti = ingredients.ingredients;
         // let vetIngradienti=ingredients['ingredients'];
 
-        vetIngradienti.sort(function (record1, record2) {
+        vetIngradienti.sort(function(record1, record2) {
             let str1 = record1.strIngredient1.toUpperCase();
             let str2 = record2.strIngredient1.toUpperCase();
             if (str1 < str2) return -1;
@@ -60,7 +60,7 @@ window.onload = function () {
         creaIntestazione();
         for (const item of vetCocktails) {
             if ((_optTutti.checked || (_optAlcolici.checked && item.strAlcoholic == "Alcoholic") || (_optNonAlcolici.checked && item.strAlcoholic == "Non alcoholic")) &&
-                (_listbox.value=="" || _listbox.value==item.strIngredient1)) {
+                (_listbox.value == "" || _listbox.value == item.strIngredient1)) {
                 let _tr = document.createElement("tr");
                 _table.appendChild(_tr);
 
@@ -116,6 +116,8 @@ window.onload = function () {
 
                 // h3
                 _divDettagli.appendChild(_h3);
+
+                // ingredients
                 let ingredients = "";
                 for (let i = 1; i <= 5; i++) {
                     if (item["strIngredient" + i] != null) {

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Verifica JSON</title>
+    <script type="application/javascript" src="json.js"></script>
+    <script type="application/javascript" src="index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrapper {
+            width: 180px;
+            margin: 20px auto;
+            background-color: #ffa;
+            font-size: 13pt;
+            padding: 20px;
+            padding-left: 35px;
+            font-style: italic;
+            font-weight: bold;
+            border-radius: 15px;
+            border: 1px solid blue;
+        }
+        
+        #wrapper select {
+            width: 100px;
+            margin: 10px 30px;
+            padding: 3px;
+        }
+        
+        #table {
+            background-color: #ddd;
+            margin: 20px auto;
+            paddig: 10px;
+            width: 700px;
+            overflow: auto;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+        
+        #table thead {
+            display: block;
+        }
+        
+        #table tbody {
+            height: 250px;
+            display: block;
+            overflow-y: auto;
+        }
+        
+        #table th {
+            width: 135px;
+            border: 1px solid black;
+        }
+        
+        #table td {
+            width: 135px;
+            text-align: center;
+        }
+        
+        #dettagli {
+            background-color: #ddd;
+            margin: 20px auto;
+            padding: 15px;
+            width: 350px;
+            height: 220px;
+            border-radius: 15px;
+            border: 1px solid blue;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">Anagrafica Comunale</h1>
+
+    <div id="wrapper">
+        Seleziona una nazione: <br>
+        <select id="lstNazioni">
+			<option value="tutti"> tutti </option>
+		</select>
+    </div>
+
+    <table id="table">
+        <thead id="thead"> </thead>
+        <tbody id="tbody"> </tbody>
+    </table>
+
+    <div id="dettagli">
+    </div>
+
+</body>
+
+</html>

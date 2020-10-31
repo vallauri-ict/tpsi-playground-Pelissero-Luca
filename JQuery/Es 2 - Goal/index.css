@@ -1,0 +1,30 @@
+span {
+	cursor: pointer;
+	margin-left: 40px;
+	text-decoration: underline;
+}
+
+#calciatore {
+	margin-top:50px;
+    width: 300px;
+    height: 400px;
+	position: absolute;
+	top: 100px;
+}
+
+#palla {
+	width:100px;
+    height:100px;
+    position:absolute;
+    top:365px;
+    left:280px;
+}
+
+#porta {
+	width: 370px;
+	height: 370px;
+	position: absolute;
+	top: 100px;
+	left: 800px;
+}
+

@@ -1,0 +1,65 @@
+<! doctype html> 
+<head lang="it">
+    <meta charset="UTF-8">
+    <title>Esercizio 5</title>
+    <script type="application/javascript" src="../jquery.js"></script>
+    <script type="application/javascript" src="index.js"></script>
+	<style>
+	    div, p{
+	        width:70px;
+	        height:70px;
+	        border:1px solid black;
+	        float:left;
+	        margin:10px;
+	        cursor:hand;
+			background-color:white;	 
+	    }
+	   
+	    #wrapper{ 
+	        /* Elimino width:60 e height:60 */
+	        width:auto;
+	        height:auto;			
+			background-color:#eee;	   
+           /*  float:left è erediatato  */	   
+	    }	
+		
+		#txtRis{
+		   width:240px;
+	       height:auto;	
+		   border:none;
+		}				
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+	    <!-- all'interno del wrapper ci sono 7 box -->
+		<div>div</div>		 
+		<div id="grigio" style="background-color:gray">div#grigio</div>
+		<p id="blu" style="background-color:blue">p#blu</p>
+		<div id="rosso" style="background-color:red">div#rosso</div>	 
+		<div> my Div </div>	 
+		<div> <span style="font-style:italic;font-weight:bold"> div span </span> </div>	 
+		<p>p</p>
+	</div>	
+	<p id="txtRis"	style="clear:both"> </p> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,19 +1,43 @@
+"use strict";
+
 $(document).ready(function() {
 
     let _ris = $("#txtRis");
 
-    $("div:not('#wrapper'), p").click(function() {
+    $("#wrapper div, #wrapper p").click(function() {
         _ris.empty();
         // Per ogni click richiamo 7 volte elabara() 
         for (let i = 1; i <= 7; i++)
-            elabara($(this), i);
+            elabora($(this), i);
         visualizza("-----------------------")
 
+        // verifico se l'emento corrente è di tipo p
+        if ($(this).is("p")) {
+            visualizza("sono un tag p");
+        }
 
+        // verifico se l'emento corrente ha sfondo rosso o blu
+        if ($(this).is("#blue, #rosso")) {
+            visualizza("sono l'elemento " + $(this).html());
+        }
+
+        // if ($(this).html().includes("my Div")) {
+        if ($(this).is(":contains('my Div')")) {
+            visualizza("il mio testo è my Div");
+        }
+
+        // if ($(this).is(":has('span')")) {
+        if ($(this).html().includes("<span")) {
+            visualizza("al mio interno c'è un tag span");
+        }
+
+        if ($(this).is(":last-child")) {
+            visualizza("sono l'ultimo figlio di wrapper");
+        }
     });
 
 
-    function elabara(box, i) {
+    function elabora(box, i) {
         // 1 - i-esimo elemento generico 	
         if (box.is(`:nth-child(${i})`))
             visualizza(`nth-child(${i})`);

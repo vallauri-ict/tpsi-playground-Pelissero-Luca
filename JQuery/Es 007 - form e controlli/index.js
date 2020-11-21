@@ -84,5 +84,26 @@ function imposta(codice) {
         case 1:
             _form1.find("input[type=text]").first().val("Nuovo valore");
             break;
+        case 2:
+            // prop parte sempre da base 0
+            // _form1.find("select").first().prop("slectedIndex", 1);
+            _form1.find("select").first().children().eq(2).prop("selected", true);
+            break;
+        case 3:
+            // .eq(0) --> in questo caso equivale a .first() perchè prende il primo
+            let chks = _form1.children("fieldset").eq(0).find("input[type=checkbox]")
+            chks.first().prop("checked", true) //oppure
+            chks.eq(1).prop("checked", true); //oppure
+            // scrivo il value di quelli che voglio selezionare
+            // chks.val(["opzione 1", "opzione 3"])
+            break;
+        case 4:
+            _form1.children("fieldset").eq(1).find("input[type=radio]").eq(1).prop("checked", true)
+            break;
+        case 5:
+            let select = _form1.children("select").last();
+            select.children("option").eq(1).prop("selected", true)
+            select.children("option").eq(2).prop("selected", true)
+            break;
     }
 }

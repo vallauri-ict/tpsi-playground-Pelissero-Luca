@@ -32,8 +32,8 @@ function sposta(index) {
 function aggiungiPrima(index) {
     index--;
     let li = $("<li>")
-    li.text("Voce iniziale")
-        // ul[index].children("li").first().before(li)
+    li.text("Voce iniziale");
+    // ul[index].children("li").first().before(li)
     li.insertBefore(ul[index].children("li").first())
 }
 
@@ -46,5 +46,28 @@ function aggiungiDopo(index) {
 }
 
 function replica(index) {
+    index--;
+    let li = $("<li>")
+    li.text("aaaaaaaaaaaaaa");
+    // ul[index].children("li").before(li)
+    li.insertBefore(ul[index].children("li"))
+}
 
+function CreazioneConCostruttore() {
+    $("<div>", {
+        "css": {
+            "background-color": "#ddd",
+            "width": "190px",
+            "height": "20px"
+        },
+        "text": "hello world",
+        "appendTo": wrapper,
+        "append": [
+            $("<lable>", { "text": "hobbies :" }),
+            $("<input>", { "type": "radio", "name": "hobbies" }),
+            $("<span>", { "text": "sport" }),
+            $("<input>", { "type": "radio", "name": "hobbies" }),
+            $("<span>", { "text": "musica" })
+        ]
+    })
 }

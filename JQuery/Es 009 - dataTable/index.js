@@ -1,44 +1,50 @@
-$(document).ready( function(){
+"use strict";
 
-	let _ris = $("#txtRis");
-		
-	$("div:not('#wrapper'), p").click( function () {	
-		_ris.empty();		
-		// Per ogni click richiamo 7 volte elabara() 
-		for(let i=1; i<=7; i++) 	
-		   elabara($(this), i);			
-		visualizza("-----------------------")	
-	   
+$(document).ready(function() {
+    const finalUrl = "https://randomuser.me/api";
+    let _table = $("#wrapper table")
 
-	});
+    $.ajax({
+        "url": finalUrl + "?results=50",
+        // data rappresenta il json già parsificato restituito dal server
+        "success": function(data) {
+            console.log(data);
 
 
-	function elabara(box, i){
-		// 1 - i-esimo elemento generico 	
-		if(box.is(`:nth-child(${i})`))
-			visualizza(`nth-child(${i})`);
-		// 2 - i-esimo elemento generico, ma solo se di tipo DIV		
-		if(box.is(`div:nth-child(${i})`))
-			visualizza(`div:nth-child(${i})`);  
-		// 3 - i-esimo elemento generico, ma solo se di tipo P			
-		if(box.is(`p:nth-child(${i})`))
-			visualizza(`p:nth-child(${i})`);
-			
-		// 4 - i-esimo elemento del suo tipo			
-		if(box.is(`:nth-of-type(${i})`))
-			visualizza(`nth-of-type(${i})`);	
-		// 5 - i-esimo elemento del suo tipo, ma solo se di tipo DIV
-		if(box.is(`div:nth-of-type(${i})`))
-			visualizza(`div:nth-of-type(${i})`);
-		// 6 - i-esimo elemento del suo tipo, ma solo se di tipo P 
-		if(box.is(`p:nth-of-type(${i})`))
-			visualizza(`p:nth-of-type(${i})"`);
-	}	
-
-	function visualizza(msg){
-		_ris.html(_ris.html() + msg + "<br>");
-	}
-
+            for (const person of data.results) {
+                let tr = $("<tr>")
+                tr.appendTo(_table.children("tbody"))
+                let name = person.name.first + " " + person.name.last;
+                $("<td>").appendTo(tr).text(name);
+                $("<td>").appendTo(tr).text(person.nat);
+                $("<td>").appendTo(tr).text(person.location.country);
+                $("<td>").appendTo(tr).text(person.location.state);
+                $("<td>").appendTo(tr).text(person.cell);
+                let td = $("<td>").appendTo(tr);
+                $("<img>").appendTo(td).prop("src", person.picture.thumbnail)
+            }
+            /* Se lancio .DataTable() prima che la tabella sia stata popolata, l'applicazione funziona ugualmente,
+               però visualizza un fastidioso msg iniziale di tabella vuota */
+            _table.DataTable({
+                "bPaginate": true, // paginazione dei record da visualizzare
+                "bLengthChange": true, // n. di record per pagina
+                "bFilter": true, // ricerca della voce impostata
+                "bSort": true // ordinamento dei record sul click on the header
+            });
+        },
+        "error": errore
+    });
 });
 
 
+
+
+
+function errore(jqXHR, text_status, string_error) {
+    if (jqXHR.status == 0)
+        alert("Connection Refused or Server timeout");
+    else if (jqXHR.status == 200)
+        alert("Formato dei dati non corretto : " + jqXHR.responseText);
+    else
+        alert("Server Error: " + jqXHR.status + " - " + jqXHR.responseText);
+}

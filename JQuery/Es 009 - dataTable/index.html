@@ -1,65 +1,34 @@
-<! doctype html> 
+<!DOCTYPE html>
+
 <head lang="it">
     <meta charset="UTF-8">
-    <title>Esercizio 5</title>
+    <title>Esercizio 09</title>
+    <link rel="stylesheet" href="index.css" />
     <script type="application/javascript" src="../jquery.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css" />
+    <script type="application/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
     <script type="application/javascript" src="index.js"></script>
-	<style>
-	    div, p{
-	        width:70px;
-	        height:70px;
-	        border:1px solid black;
-	        float:left;
-	        margin:10px;
-	        cursor:hand;
-			background-color:white;	 
-	    }
-	   
-	    #wrapper{ 
-	        /* Elimino width:60 e height:60 */
-	        width:auto;
-	        height:auto;			
-			background-color:#eee;	   
-           /*  float:left è erediatato  */	   
-	    }	
-		
-		#txtRis{
-		   width:240px;
-	       height:auto;	
-		   border:none;
-		}				
-	</style>
 </head>
 
 <body>
-	<div id="wrapper">
-	    <!-- all'interno del wrapper ci sono 7 box -->
-		<div>div</div>		 
-		<div id="grigio" style="background-color:gray">div#grigio</div>
-		<p id="blu" style="background-color:blue">p#blu</p>
-		<div id="rosso" style="background-color:red">div#rosso</div>	 
-		<div> my Div </div>	 
-		<div> <span style="font-style:italic;font-weight:bold"> div span </span> </div>	 
-		<p>p</p>
-	</div>	
-	<p id="txtRis"	style="clear:both"> </p> 
+    <h2> Elenco studenti random user </h2>
+    <div id="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th width="20%"> name </th>
+                    <th width="10%"> nat </th>
+                    <th width="15%"> country </th>
+                    <th width="15%"> state </th>
+                    <th width="20%"> cell </th>
+                    <th width="20%"> img </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

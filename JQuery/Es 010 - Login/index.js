@@ -6,7 +6,6 @@ var utenti = [{ "user": "pippo", "pwd": "pwdPippo" },
 ];
 
 $(document).ready(function() {
-
     let _user = $("#txtUser");
     let _pwd = $("#txtPwd");
 
@@ -25,13 +24,11 @@ $(document).ready(function() {
         }
 
         if (!ok) {
-            _user.addClass("nok");
-            _msgUser.css({ color: "red" }).text("User non valido");
-            _msgUser.fadeIn(2000);
+            _user.addClass("nok")
+            _msgUser.css({ color: "red" }).html("User non valido").hide().fadeIn(1000);
+
         } else {
-            _user.removeClass("nok")
-            _msgUser.css({ color: "green" }).text("OK");
-            _msgUser.fadeIn(2000);
+            _msgUser.css({ color: "green" }).html("OK").hide().fadeIn(1000);
         }
     })
 
@@ -48,12 +45,10 @@ $(document).ready(function() {
                         ok = true;
         if (!ok) {
             _pwd.addClass("nok");
-            _msgPwd.css({ color: "red" }).text("Pwd non valida o non corrispondente");
-            _msgPwd.fadeIn(2000);
+            _msgPwd.css({ color: "red" }).text("Pwd non valida o non corrispondente").hide().fadeIn(1000);
         } else {
             _pwd.removeClass("nok")
-            _msgPwd.css({ color: "green" }).text("OK");
-            _msgPwd.fadeIn(2000);
+            _msgPwd.css({ color: "green" }).text("OK").hide().fadeIn(1000);
         }
     })
 });

@@ -33,9 +33,9 @@ $(document).ready(function() {
             // testo sull'hover
             div.hover(
                 // mouseenteer
-                function() { _tooltip.text(`#${color}${color}${color}`).fadeIn(1000) },
+                function() { _tooltip.text(`rgb(${color}, ${color}, ${color})`).fadeIn(1000) },
                 // mouseleave
-                function() { _tooltip.text(`#${color}${color}${color}`).fadeOut(1000) }
+                function() { _tooltip.text(`rgb(${color}, ${color}, ${color})`).fadeOut(1000) }
             );
 
             div.appendTo(_wr);

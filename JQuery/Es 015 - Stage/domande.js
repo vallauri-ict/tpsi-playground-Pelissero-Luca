@@ -1,4 +1,4 @@
-var elencoDomande = [
+let elencoDomande = [
     { "argomento":"Geografia e Europa",
 	  "domande":[
 		  {"domanda":"New York è la capitale degli USA", "risposta":"F"},
@@ -8,7 +8,7 @@ var elencoDomande = [
 		  {"domanda":"Hong Kong fa perte della Repubblica Popolare Cinese", "risposta":"T"},
 		  {"domanda":"Taiwan fa perte della Repubblica Popolare Cinese", "risposta":"F"},
 		  {"domanda":"Lubiana è la capitale della Slovenia", "risposta":"T"},
-		  {"domanda":"La Slovenia ha un accesso al mare", "risposta":"T"},	  
+		  {"domanda":"La Slovenia ha un accesso al mare", "risposta":"T"},
 		  {"domanda":"Gli stati membri dell'Unione Europea sono attualmente 28", "risposta":"T"},
 		  {"domanda":"Le tre sedi del parlamento europeo sono Bruxelles, Strasburgo e Lussemburgo", "risposta":"T"}
 	  ]
@@ -41,5 +41,5 @@ var elencoDomande = [
 		  {"domanda":"Data di entrata in vigore della Costituzione Italiana : 1 gennaio 1948 ", "risposta":"T"},
 		  {"domanda":"Primo Presidente della Repubblica Italiana : Enrico De Nicola ", "risposta":"T"}
 	  ]
-	}	
+	}
 ];

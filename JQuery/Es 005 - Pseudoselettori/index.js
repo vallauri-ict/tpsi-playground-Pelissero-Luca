@@ -27,7 +27,7 @@ $(document).ready(function() {
         }
 
         // if ($(this).is(":has('span')")) {
-        if ($(this).html().includes("<span")) {
+        if ($(this).html().includes("<span>")) {
             visualizza("al mio interno c'è un tag span");
         }
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
             visualizza(`div:nth-of-type(${i})`);
         // 6 - i-esimo elemento del suo tipo, ma solo se di tipo P 
         if (box.is(`p:nth-of-type(${i})`))
-            visualizza(`p:nth-of-type(${i})"`);
+            visualizza(`p:nth-of-type(${i})`);
     }
 
     function visualizza(msg) {

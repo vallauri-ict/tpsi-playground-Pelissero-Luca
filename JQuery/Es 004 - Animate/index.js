@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var _btnAvvia = $("#btnAvvia");
+    let _btnAvvia = $("#btnAvvia");
     _btnAvvia.on("click", eseguiAnimazione);
 
     _btnAvvia.css("opacity", 1);

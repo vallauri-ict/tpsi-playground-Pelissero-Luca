@@ -1,6 +1,6 @@
 "use strict"
 
-const URL = "http://localhost:3000"
+const URL = "http://localhost:3000";
 let intestazione = [{
         "tag": "th",
         "text": "nomeModello",
@@ -71,6 +71,9 @@ $(document).ready(function() {
                 op.val(modello.id);
                 op.text(modello.nome + " - " + modello.alimentazione);
                 op.appendTo(_lstModelli);
+
+                //  dentro ogni opzione salvo le infomazioni del modello
+                op.prop("modello", modello);
             }
             _lstModelli.prop("selectedIndex", -1);
         });
@@ -79,9 +82,12 @@ $(document).ready(function() {
     _lstModelli.on("change", function() {
         _table.empty();
 
-        let opzioneSelezionata = _lstModelli.children("option").eq(_lstModelli.prop("selectedIndex")).text();
-        _lstModelli.prop("nome", opzioneSelezionata.split(" - ")[0]);
-        _lstModelli.prop("alimentazione", opzioneSelezionata.split(" - ")[1]);
+        let opzioneSelezionata = _lstModelli.children("option").eq(_lstModelli.prop("selectedIndex"));
+
+        // salvo dentro il listbox le info del modello selezionato
+        _lstModelli.prop("modello", opzioneSelezionata.prop("modello"));
+        // _lstModelli.prop("nome", opzioneSelezionata.split(" - ")[0]);
+        // _lstModelli.prop("alimentazione", opzioneSelezionata.split(" - ")[1]);
 
         let codModello = _lstModelli.val();
         let request = inviaRichiesta("get", URL + "/automobili?codModello=" + codModello);
@@ -100,17 +106,18 @@ $(document).ready(function() {
             }
             let tbody = $("<tbody>");
             tbody.appendTo(_table);
+
             for (const auto of automobili) {
                 let tr = $("<tr>");
                 tr.appendTo(tbody);
 
                 let td = $("<td>");
                 td.appendTo(tr);
-                td.text(_lstModelli.prop("nome"))
+                td.text((_lstModelli.prop("modello")).nome)
 
                 td = $("<td>");
                 td.appendTo(tr);
-                td.text(_lstModelli.prop("alimentazione"))
+                td.text((_lstModelli.prop("modello")).alimentazione)
 
                 td = $("<td>");
                 td.appendTo(tr);
@@ -130,16 +137,58 @@ $(document).ready(function() {
                 td = $("<td>");
                 td.appendTo(tr);
                 let btn = $("<button>")
+                btn.addClass("btn btn-xs btn-success");
                 btn.appendTo(td);
                 btn.text("Dettagli")
+                btn.prop("automobile", auto)
+                btn.on("click", dettagliClick)
 
                 td = $("<td>");
                 td.appendTo(tr);
                 btn = $("<button>")
+                btn.addClass("btn btn-xs btn-secondary");
                 btn.appendTo(td);
+                btn.prop("id", auto.id);
                 btn.text("Elimina")
+                btn.on("click", eliminaClick);
             }
         });
     })
+
+    function dettagliClick() {
+        _dettagli.show();
+
+        $("#txtId").val(($(this).prop("automobile")).id);
+        $("#txtNome").val((_lstModelli.prop("modello")).nome);
+        $("#txtAlimentazione").val((_lstModelli.prop("modello")).alimentazione);
+        $("#txtCilindrata").val((_lstModelli.prop("modello")).cilindrata);
+        $("#txtTarga").val(($(this).prop("automobile")).targa);
+        $("#txtColore").val(($(this).prop("automobile")).colore);
+        $("#txtAnno").val(($(this).prop("automobile")).anno);
+        $("#txtKm").val(($(this).prop("automobile")).km);
+        $("#txtPrezzo").val(($(this).prop("automobile")).prezzo);
+    }
+
+    let btnSalva = $("#btnSalva");
+    btnSalva.on("click", function() {
+        let url = URL + "/automobili/" + $("#txtId").val();
+        let request = inviaRichiesta("patch", url, { "prezzo": parseInt($("#txtPrezzo").val()) });
+        request.fail(errore);
+        request.done(function() {
+            alert("Prezzo aggiornato correttamente");
+            _lstModelli.trigger("change");
+        })
+    });
+
+    function eliminaClick() {
+        let url = URL + "/automobili/" + ($(this).prop("id"));
+        let request = inviaRichiesta("delete", url);
+        request.fail(errore);
+        request.done(function() {
+            alert("Automobile eliminata correttamente");
+            // forza l'evento change come se avessi cliccato con il mouse (aggiorna il listBox)
+            _lstModelli.trigger("change");
+        })
+    }
 
 });

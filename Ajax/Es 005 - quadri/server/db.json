@@ -43,35 +43,35 @@
       "artist": 1,
       "title": "guernica",
       "img": "guernica.jpg",
-      "nLike": 13
+      "nLike": 6
     },
     {
       "id": 2,
       "artist": 1,
       "title": "donna che piange",
       "img": "donna che piange.jpg",
-      "nLike": 14
+      "nLike": 3
     },
     {
       "id": 3,
       "artist": 1,
       "title": "ragazza di fronte allo specchio",
       "img": "ragazza di fronte allo specchio.jpg",
-      "nLike": 15
+      "nLike": 4
     },
     {
       "id": 4,
       "artist": 2,
       "title": "la fattoria",
       "img": "la fattoria.jpg",
-      "nLike": 16
+      "nLike": 5
     },
     {
       "id": 5,
       "artist": 2,
       "title": "maggio 1968",
       "img": "maggio 1968.jpg",
-      "nLike": 17
+      "nLike": 7
     },
     {
       "id": 6,
@@ -85,7 +85,7 @@
       "artist": 3,
       "title": "i giocatori di carte",
       "img": "i giocatori di carte.jpg",
-      "nLike": 19
+      "nLike": 8
     },
     {
       "id": 8,
@@ -127,28 +127,28 @@
       "artist": 5,
       "title": "sulla terrazza",
       "img": "sulla terrazza.jpg",
-      "nLike": 25
+      "nLike": 14
     },
     {
       "id": 14,
       "artist": 5,
       "title": "la colazione dei canottieri",
       "img": "la colazione dei canottieri.jpg",
-      "nLike": 26
+      "nLike": 15
     },
     {
       "id": 15,
       "artist": 5,
       "title": "a girl with a watering can",
       "img": "a girl with a watering can.jpg",
-      "nLike": 27
+      "nLike": 28
     },
     {
       "id": 16,
       "artist": 6,
       "title": "notte stellata",
       "img": "notte stellata.jpg",
-      "nLike": 28
+      "nLike": 30
     },
     {
       "id": 17,

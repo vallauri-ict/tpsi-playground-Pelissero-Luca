@@ -1,7 +1,5 @@
 "option strict"
 
-const URL = "http://localhost:3000"
-
 $(document).ready(function() {
     const _lstCitta = $("#lstCitta")
     const _lstGeneri = $("#lstGeneri")
@@ -9,302 +7,145 @@ $(document).ready(function() {
     const _tbody = $("table tbody");
     const _divDettagli = $("#divDettagli")
 
-    let idGenere;
-    let idCitta;
-    let struttura;
-    let nPosti;
-
-    let filtraClick = false;
-
     _divDettagli.hide()
 
-    creaDropDown();
-    caricaTabellaAll();
-    // -------------------------------------------
+    caricaComboCitta();
+    caricaComboGeneri();
+    caricaTabella();
 
-    function creaDropDown() {
-        let request1 = inviaRichiesta("get", URL + "/generi/");
-        request1.fail(errore);
-        request1.done(function(generi) {
-
-            _lstGeneri.addClass("dropdown");
-
-            let btn = $("<button>");
-            btn.addClass("btn btn-primary dorpdown-toggle");
-            btn.prop("type", "button");
-            btn.attr("data-toggle", "dropdown");
-            btn.text("Generi");
-            btn.appendTo(_lstGeneri);
-
-            let span = $("<span>");
-            span.addClass("caret");
-            span.appendTo(btn);
-
-            let ul = $("<ul>")
-            ul.addClass("dropdown-menu")
-            ul.appendTo(_lstGeneri);
-
-            let li = $("<li>")
-            li.appendTo(ul);
-
-            let a = $("<a>");
-            a.text("All");
-            a.on("click", function() {
-                btn.text(a.text());
-                span = $("<span>");
-                span.addClass("caret");
-                span.appendTo(btn);
-                idCitta = "All";
-            })
-            a.appendTo(li)
-
-            for (const genere of generi) {
-                let li = $("<li>")
-                li.appendTo(ul);
-                let a = $("<a>");
-                a.text(genere.genere);
-                a.prop("json", genere);
-                a.on("click", function() {
-                    btn.text(a.text());
-                    span = $("<span>");
-                    span.addClass("caret");
-                    span.appendTo(btn);
-                    idGenere = genere.id;
-                })
-                a.appendTo(li)
-            }
-        })
-
-        //  lst citta
-        let request2 = inviaRichiesta("get", URL + "/citta/");
-        request2.fail(errore);
-        request2.done(function(jsonCitta) {
-
-            _lstCitta.addClass("dropdown");
-
-            let btn = $("<button>");
-            btn.addClass("btn btn-secondary dorpdown-toggle");
-            btn.prop("type", "button");
-            btn.attr("data-toggle", "dropdown");
-            btn.text("Città");
-            btn.appendTo(_lstCitta);
-
-            let span = $("<span>");
-            span.addClass("caret");
-            span.appendTo(btn);
-
-            let ul = $("<ul>")
-            ul.addClass("dropdown-menu")
-            ul.appendTo(_lstCitta);
-
-            let li = $("<li>")
-            li.appendTo(ul);
-
-            let a = $("<a>");
-            a.text("All");
-            a.on("click", function() {
-                btn.text(a.text());
-                span = $("<span>");
-                span.addClass("caret");
-                span.appendTo(btn);
-                idCitta = "All";
-            })
-            a.appendTo(li)
-
-            for (const nCitta of jsonCitta) {
-                let li = $("<li>")
-                li.appendTo(ul);
-                let a = $("<a>");
-                a.text(nCitta.citta);
-                a.prop("json", nCitta);
-                a.on("click", function() {
-                    btn.text(a.text());
-                    span = $("<span>");
-                    span.addClass("caret");
-                    span.appendTo(btn);
-                    idCitta = nCitta.id;
-                    struttura = nCitta.struttura;
-                    nPosti = nCitta.nPosti;
-                })
-                a.appendTo(li)
-            }
-        })
-    }
-
-    function caricaTabellaAll() {
-        _divDettagli.hide()
-
-        let request = inviaRichiesta("get", URL + "/concerti/")
-        request.fail(errore);
-        request.done(function(concerti) {
-            for (const concerto of concerti) {
-                let tr = $("<tr>");
-                tr.appendTo(_tbody);
-
-                let td = $("<td>");
-                td.text(concerto.id);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(concerto.cantante);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(concerto.data);
-                td.appendTo(tr);
-
-                // genere
-                let requestGenere = inviaRichiesta("get", URL + "/generi?id=" + concerto.codGenere);
-                requestGenere.fail(errore);
-                requestGenere.done(function(jsonGenere) {
-                    let tdGen = $("<td>")
-                    tdGen.text(jsonGenere[0].genere);
-                    tdGen.appendTo(tr);
-
-                    // citta
-                    let requestCitta = inviaRichiesta("get", URL + "/citta?id=" + concerto.codCitta);
-                    requestCitta.fail(errore);
-                    requestCitta.done(function(jsonCitta) {
-                        let tdCitta = $("<td>")
-                        tdCitta.text(jsonCitta[0].citta);
-                        tdCitta.appendTo(tr);
-
-                        tdCitta = $("<td>")
-                        tdCitta.text(jsonCitta[0].struttura);
-                        tdCitta.appendTo(tr);
-
-                        tdCitta = $("<td>")
-                        tdCitta.text(jsonCitta[0].nPosti);
-                        tdCitta.appendTo(tr);
-
-                        let tdBtn1 = $("<td>");
-                        let btnDettagli = $("<button>")
-                        btnDettagli.addClass("btn btn-info btn-xs");
-                        btnDettagli.prop("type", "button");
-                        btnDettagli.prop("jsonConcerto", concerto);
-                        btnDettagli.prop("dettagliConcerto", concerto.dettagli);
-                        btnDettagli.text("DETTAGLI");
-                        btnDettagli.on("click", visualizzaDettagli);
-                        btnDettagli.appendTo(tdBtn1);
-                        tdBtn1.appendTo(tr);
-
-                        let tdBtn2 = $("<td>");
-                        let btnPrenota = $("<button>")
-                        btnPrenota.addClass("btn btn-success btn-xs");
-                        btnPrenota.prop("type", "button");
-                        btnPrenota.prop("numPosti", concerto.nPosti);
-                        btnPrenota.on("click", prenota);
-                        btnPrenota.text("PRENOTA");
-                        btnPrenota.appendTo(tdBtn2);
-                        tdBtn2.appendTo(tr);
-                    })
-                })
-            }
-        })
-    }
-
-    _btnFiltro.on("click", function() {
-        _divDettagli.hide()
-
-        filtraClick = true;
-
-        if (idGenere == undefined) {
-            idGenere = "All";
+    _lstCitta.on("click", "li", function() {
+        let record = $(this).prop("citta");
+        _lstCitta.prop("citta", record);
+        if (record == undefined) {
+            _lstCitta.prev().html("All <span class='caret'></span>");
+            _lstCitta.prop("citta", null)
+        } else {
+            _lstCitta.prev().html(record.citta + "<span class='caret'></span>");
         }
-        if (idCitta == undefined) {
-            idCitta = "All";
-        }
-
-        let url = "";
-
-        if (idGenere == "All" && idCitta != "All") {
-            url = URL + "/concerti?codCitta=" + idCitta;
-        } else if (idGenere != "All" && idCitta == "All") {
-            url = URL + "/concerti?codGenere=" + idGenere;
-        } else if (idGenere == "All" && idCitta == "All") {
-            caricaTabellaAll();
-        } else if (idGenere != "All" && idCitta != "All") {
-            url = URL + "/concerti?codGenere=" + idGenere + "&codCitta=" + idCitta;
-        }
-
-        _tbody.empty();
-
-        let request = inviaRichiesta("get", url);
-        request.fail(errore);
-        request.done(function(concerti) {
-            for (const concerto of concerti) {
-                let tr = $("<tr>");
-                tr.appendTo(_tbody);
-
-                let td = $("<td>");
-                td.text(concerto.id);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(concerto.cantante);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(concerto.data);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(_lstGeneri.children("button").text());
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(_lstCitta.children("button").text());
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(struttura);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                td.text(nPosti);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                let btnDettagli = $("<button>")
-                btnDettagli.addClass("btn btn-info btn-xs");
-                btnDettagli.prop("type", "button");
-                btnDettagli.prop("dettagliConcerto", concerto.dettagli);
-                btnDettagli.text("DETTAGLI");
-                btnDettagli.on("click", visualizzaDettagli);
-                btnDettagli.appendTo(td);
-                td.appendTo(tr);
-
-                td = $("<td>");
-                let btnPrenota = $("<button>")
-                btnPrenota.addClass("btn btn-success btn-xs");
-                btnPrenota.prop("type", "button");
-                btnPrenota.prop("numPosti", concerto.nPosti);
-                btnPrenota.text("PRENOTA");
-                btnPrenota.on("click", prenota);
-                btnPrenota.appendTo(td);
-                td.appendTo(tr);
-            }
-        })
     })
 
-    function visualizzaDettagli() {
-        _divDettagli.show()
-        _divDettagli.children("textarea").text("");
-        _divDettagli.children("textarea").text($(this).prop("dettagliConcerto"))
+    _lstGeneri.on("click", "li", function() {
+        let record = $(this).prop("genere");
+        _lstGeneri.prop("genere", record);
+        if (record == undefined) {
+            _lstGeneri.prev().html("All <span class='caret'></span>");
+            _lstGeneri.prop("generi", null)
+        } else {
+            _lstGeneri.prev().html(record.genere + "<span class='caret'></span>");
+        }
+    })
+
+    _btnFiltro.on("click", caricaTabella);
+
+    // ----------------------------------------------------
+
+    function caricaComboCitta() {
+        let li = $("<li>");
+        li.text("All");
+        li.appendTo(_lstCitta);
+
+        let request = inviaRichiesta("get", "/citta");
+        request.fail(errore);
+        request.done(function(citta) {
+            for (const item of citta) {
+                li = $("<li>");
+                li.text(item.citta);
+                li.prop("citta", item);
+                li.appendTo(_lstCitta);
+            }
+        })
     }
 
-    function prenota() {
-        let url = URL + "/citta?nPosti=" + $(this).prop("numPosti");
-        let request = inviaRichiesta("patch", url, { "numPosti": parseInt($(this).prop("numPosti")) - 1 });
+    function caricaComboGeneri() {
+        let li = $("<li>");
+        li.text("All");
+        li.appendTo(_lstGeneri);
 
+        let request = inviaRichiesta("get", "/generi");
         request.fail(errore);
-        request.done(function() {
-            if (filtraClick) {
-                _btnFiltro.trigger("click");
-            } else {
-                caricaTabellaAll();
+        request.done(function(generi) {
+            for (const genere of generi) {
+                li = $("<li>");
+                li.text(genere.genere);
+                li.prop("genere", genere);
+                li.appendTo(_lstGeneri);
             }
-            alert("nPosti aggiotnato")
         })
+    }
+
+    function caricaTabella() {
+        let genere = _lstGeneri.prop("genere");
+        let citta = _lstCitta.prop("citta");
+        let json = {};
+        // push funge solo su i vettore enumerativi
+        // json = {
+        //     "codGenere": _lstGeneri.prop("genere").id,
+        //     "codCitta": _lstCitta.prop("citta").id
+        // }
+
+        if (genere != null)
+            json.codGenere = genere.id;
+        if (citta != null)
+            json["codCitta"] = citta.id;
+
+        let request = inviaRichiesta("get", "/concerti", json);
+        request.fail(errore);
+        request.done(visualizzaConcerti);
+    }
+
+    function visualizzaConcerti(concerti) {
+        _tbody.html("");
+        for (const concerto of concerti) {
+            let tr = $("<tr>")
+            tr.appendTo(_tbody);
+
+            let td = $("<td>")
+            td.text(concerto.id);
+            td.appendTo(tr);
+
+            td = $("<td>")
+            td.text(concerto.cantante);
+            td.appendTo(tr);
+
+            td = $("<td>")
+            td.text(concerto.data);
+            td.appendTo(tr);
+
+            let tdGenere = $("<td>")
+            tdGenere.appendTo(tr);
+            let requestGeneri = inviaRichiesta("get", "/generi/" + concerto.codGenere);
+            requestGeneri.fail(errore);
+            requestGeneri.done(function(genere) {
+                tdGenere.text(genere.genere);
+            })
+
+            let tdCitta = $("<td>")
+            tdCitta.appendTo(tr);
+            let tdStruttura = $("<td>")
+            tdStruttura.appendTo(tr);
+            let tdNPosti = $("<td>")
+            tdNPosti.appendTo(tr);
+            let requestCitta = inviaRichiesta("get", "/citta/" + concerto.codCitta);
+            requestCitta.fail(errore);
+            requestCitta.done(function(citta) {
+                tdCitta.text(citta.citta);
+                tdStruttura.text(citta.struttura);
+                tdNPosti.text(citta.nPosti);
+            })
+
+            td = $("<td>")
+            let button = $("<button>")
+            button.text("DETTAGLI")
+            button.appendTo(td);
+            button.addClass("btn btn-info btn-xs")
+            td.appendTo(tr);
+
+            td = $("<td>")
+            button = $("<button>")
+            button.text("PRENOTA")
+            button.appendTo(td);
+            button.addClass("btn btn-success btn-xs")
+            td.appendTo(tr);
+        }
     }
 })

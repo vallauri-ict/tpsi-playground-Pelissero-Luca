@@ -1,0 +1,65 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    margin: 10px;
+}
+
+#wrapper{
+	width:800px;
+	margin:0 auto;
+	padding:10px;
+	text-align:center;
+	border:1px solid #ccc;
+	/* per "sentire" il teg <a> che è float:right */
+	overflow:auto; 
+}
+
+#wrapper button{
+	width:200px;
+	height:25px;
+	color:#eee;
+	background-color:#088;
+	border:none;
+	outline:none;
+	box-shadow:3px 3px 2px #AAA;
+	margin-bottom:20px;
+}
+
+#wrapper button:hover{
+	color:#088;
+	background-color:#eee;
+	
+}
+
+#wrapper button:active{
+	background-color:#ddd;
+	box-shadow:-3px -3px 2px #AAA;
+}
+
+#wrapper table{
+	width:300px;
+	margin: 0 auto;
+	border:1px solid #ddd;
+	background-color:#eee;
+}
+
+#wrapper table td{
+	text-align:center;
+	font-size:10pt;
+}
+
+#wrapper table td:nth-of-type(1){
+	width:75%;  /* la seconda cella sarà 25% */
+}
+
+#wrapper canvas{
+	width:800px;
+	height:400;
+	margin: 0 auto;
+	border:1px solid #ddd;
+}

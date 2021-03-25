@@ -1,19 +1,13 @@
 "use strict";
 
-function inviaRichiesta(method, url, parameters={}) {
-	let contentType;
-	if(method.toUpperCase()=="GET")
-		contentType="application/x-www-form-urlencoded;charset=utf-8";
-	else{
-		contentType = "application/json; charset=utf-8"
-        parameters = JSON.stringify(parameters);
-	}
+function inviaRichiesta(url) {
     return $.ajax({
         "url": url,
-		"data": parameters,
-		"type": method,
-		"contentType": contentType,
-        "dataType": "json",   // default
+        "type": "GET",        // default
+        "data": "", //parametri da passare al server
+		"contentType": "application/x-www-form-urlencoded;charset=utf-8", // default è il formato
+        "dataType": "json",   // default      
+        "timeout": 5000,      // default 
     });	
 }
 
@@ -26,6 +20,7 @@ function errore(jqXHR, text_status, string_error) {
     else
         alert("Server Error: " + jqXHR.status + " - " + jqXHR.responseText);
 }
+
 
 function generaNumero(a, b){
 	return Math.floor((b-a+1)*Math.random()) + a;

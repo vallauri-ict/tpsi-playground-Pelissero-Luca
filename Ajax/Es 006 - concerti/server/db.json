@@ -1,51 +1,291 @@
 {
-
-    "citta": [
-        { "id": 1, "citta": "Milano", "struttura": "San Siro", "nPosti": 50000 },
-        { "id": 2, "citta": "Torino", "struttura": "Allianz Stadium", "nPosti": 40000 },
-        { "id": 3, "citta": "Verona", "struttura": "Arena", "nPosti": 25000 },
-        { "id": 4, "citta": "Bologna", "struttura": "Dall'Ara", "nPosti": 35000 },
-        { "id": 5, "citta": "Padova", "struttura": "Stadio Euganeo", "nPosti": 30000 },
-        { "id": 6, "citta": "Firenze", "struttura": "Artemio Franchi", "nPosti": 40000 },
-        { "id": 7, "citta": "Roma", "struttura": "Stadio Olilpico", "nPosti": 50000 }
-    ],
-
-    "generi": [
-        { "id": 1, "genere": "Rock" },
-        { "id": 2, "genere": "Jazz" },
-        { "id": 3, "genere": "Pop" },
-        { "id": 4, "genere": "Blues" }
-    ],
-
-    "concerti": [
-        { "id": 1, "cantante": "pippo", "data": "11/6/2018", "codGenere": 1, "codCitta": 1, "dettagli": "dettagli concerto 1" },
-        { "id": 2, "cantante": "pluto", "data": "12/6/2018", "codGenere": 1, "codCitta": 2, "dettagli": "dettagli concerto 2" },
-        { "id": 3, "cantante": "minnie", "data": "13/6/2018", "codGenere": 1, "codCitta": 3, "dettagli": "dettagli concerto 3" },
-        { "id": 4, "cantante": "jenny", "data": "14/6/2018", "codGenere": 1, "codCitta": 4, "dettagli": "dettagli concerto 4" },
-        { "id": 5, "cantante": "sonny", "data": "15/6/2018", "codGenere": 1, "codCitta": 5, "dettagli": "dettagli concerto 5" },
-        { "id": 6, "cantante": "fanny", "data": "16/6/2018", "codGenere": 1, "codCitta": 6, "dettagli": "dettagli concerto 6" },
-        { "id": 7, "cantante": "jmmy", "data": "17/6/2018", "codGenere": 1, "codCitta": 7, "dettagli": "dettagli concerto 7" },
-        { "id": 8, "cantante": "sandy", "data": "18/6/2018", "codGenere": 2, "codCitta": 1, "dettagli": "dettagli concerto 8" },
-        { "id": 9, "cantante": "sally", "data": "19/6/2018", "codGenere": 2, "codCitta": 2, "dettagli": "dettagli concerto 9" },
-        { "id": 10, "cantante": "ronny", "data": "20/6/2018", "codGenere": 2, "codCitta": 3, "dettagli": "dettagli concerto 10" },
-        { "id": 11, "cantante": "daisy", "data": "21/6/2018", "codGenere": 2, "codCitta": 4, "dettagli": "dettagli concerto 11" },
-        { "id": 12, "cantante": "emma", "data": "22/6/2018", "codGenere": 2, "codCitta": 5, "dettagli": "dettagli concerto 12" },
-        { "id": 13, "cantante": "elly", "data": "23/6/2018", "codGenere": 2, "codCitta": 6, "dettagli": "dettagli concerto 13" },
-        { "id": 14, "cantante": "andy", "data": "24/6/2018", "codGenere": 2, "codCitta": 7, "dettagli": "dettagli concerto 14" },
-        { "id": 15, "cantante": "pippo", "data": "11/7/2018", "codGenere": 3, "codCitta": 1, "dettagli": "dettagli concerto 16" },
-        { "id": 16, "cantante": "pluto", "data": "12/7/2018", "codGenere": 3, "codCitta": 2, "dettagli": "dettagli concerto 16" },
-        { "id": 17, "cantante": "minnie", "data": "13/7/2018", "codGenere": 3, "codCitta": 3, "dettagli": "dettagli concerto 16" },
-        { "id": 18, "cantante": "jenny", "data": "14/7/2018", "codGenere": 3, "codCitta": 4, "dettagli": "dettagli concerto 18" },
-        { "id": 19, "cantante": "sonny", "data": "15/7/2018", "codGenere": 3, "codCitta": 5, "dettagli": "dettagli concerto 19" },
-        { "id": 20, "cantante": "fanny", "data": "16/7/2018", "codGenere": 3, "codCitta": 6, "dettagli": "dettagli concerto 20" },
-        { "id": 21, "cantante": "jmmy", "data": "17/7/2018", "codGenere": 3, "codCitta": 7, "dettagli": "dettagli concerto 21" },
-        { "id": 22, "cantante": "sandy", "data": "18/7/2018", "codGenere": 4, "codCitta": 1, "dettagli": "dettagli concerto 22" },
-        { "id": 23, "cantante": "sally", "data": "19/7/2018", "codGenere": 4, "codCitta": 2, "dettagli": "dettagli concerto 23" },
-        { "id": 24, "cantante": "ronny", "data": "20/7/2018", "codGenere": 4, "codCitta": 3, "dettagli": "dettagli concerto 23" },
-        { "id": 25, "cantante": "daisy", "data": "21/7/2018", "codGenere": 4, "codCitta": 4, "dettagli": "dettagli concerto 25" },
-        { "id": 26, "cantante": "emma", "data": "22/7/2018", "codGenere": 4, "codCitta": 3, "dettagli": "dettagli concerto 26" },
-        { "id": 27, "cantante": "elly", "data": "23/7/2018", "codGenere": 4, "codCitta": 4, "dettagli": "dettagli concerto 27" },
-        { "id": 28, "cantante": "andy", "data": "24/7/2018", "codGenere": 4, "codCitta": 5, "dettagli": "dettagli concerto 28" }
-    ]
-
+  "citta": [
+    {
+      "id": 1,
+      "citta": "Milano",
+      "struttura": "San Siro",
+      "nPosti": 50000
+    },
+    {
+      "id": 2,
+      "citta": "Torino",
+      "struttura": "Allianz Stadium",
+      "nPosti": 40000
+    },
+    {
+      "id": 3,
+      "citta": "Verona",
+      "struttura": "Arena",
+      "nPosti": 25000
+    },
+    {
+      "id": 4,
+      "citta": "Bologna",
+      "struttura": "Dall'Ara",
+      "nPosti": 35000
+    },
+    {
+      "id": 5,
+      "citta": "Padova",
+      "struttura": "Stadio Euganeo",
+      "nPosti": 30000
+    },
+    {
+      "id": 6,
+      "citta": "Firenze",
+      "struttura": "Artemio Franchi",
+      "nPosti": 40000
+    },
+    {
+      "id": 7,
+      "citta": "Roma",
+      "struttura": "Stadio Olilpico",
+      "nPosti": 50000
+    }
+  ],
+  "generi": [
+    {
+      "id": 1,
+      "genere": "Rock"
+    },
+    {
+      "id": 2,
+      "genere": "Jazz"
+    },
+    {
+      "id": 3,
+      "genere": "Pop"
+    },
+    {
+      "id": 4,
+      "genere": "Blues"
+    }
+  ],
+  "concerti": [
+    {
+      "id": 1,
+      "cantante": "pippo",
+      "data": "11/6/2018",
+      "codGenere": 1,
+      "codCitta": 1,
+      "dettagli": "dettagli concerto 1",
+      "nPostiOccupati": 1
+    },
+    {
+      "id": 2,
+      "cantante": "pluto",
+      "data": "12/6/2018",
+      "codGenere": 1,
+      "codCitta": 2,
+      "dettagli": "dettagli concerto 2"
+    },
+    {
+      "id": 3,
+      "cantante": "minnie",
+      "data": "13/6/2018",
+      "codGenere": 1,
+      "codCitta": 3,
+      "dettagli": "dettagli concerto 3"
+    },
+    {
+      "id": 4,
+      "cantante": "jenny",
+      "data": "14/6/2018",
+      "codGenere": 1,
+      "codCitta": 4,
+      "dettagli": "dettagli concerto 4"
+    },
+    {
+      "id": 5,
+      "cantante": "sonny",
+      "data": "15/6/2018",
+      "codGenere": 1,
+      "codCitta": 5,
+      "dettagli": "dettagli concerto 5"
+    },
+    {
+      "id": 6,
+      "cantante": "fanny",
+      "data": "16/6/2018",
+      "codGenere": 1,
+      "codCitta": 6,
+      "dettagli": "dettagli concerto 6"
+    },
+    {
+      "id": 7,
+      "cantante": "jmmy",
+      "data": "17/6/2018",
+      "codGenere": 1,
+      "codCitta": 7,
+      "dettagli": "dettagli concerto 7"
+    },
+    {
+      "id": 8,
+      "cantante": "sandy",
+      "data": "18/6/2018",
+      "codGenere": 2,
+      "codCitta": 1,
+      "dettagli": "dettagli concerto 8"
+    },
+    {
+      "id": 9,
+      "cantante": "sally",
+      "data": "19/6/2018",
+      "codGenere": 2,
+      "codCitta": 2,
+      "dettagli": "dettagli concerto 9"
+    },
+    {
+      "id": 10,
+      "cantante": "ronny",
+      "data": "20/6/2018",
+      "codGenere": 2,
+      "codCitta": 3,
+      "dettagli": "dettagli concerto 10"
+    },
+    {
+      "id": 11,
+      "cantante": "daisy",
+      "data": "21/6/2018",
+      "codGenere": 2,
+      "codCitta": 4,
+      "dettagli": "dettagli concerto 11"
+    },
+    {
+      "id": 12,
+      "cantante": "emma",
+      "data": "22/6/2018",
+      "codGenere": 2,
+      "codCitta": 5,
+      "dettagli": "dettagli concerto 12"
+    },
+    {
+      "id": 13,
+      "cantante": "elly",
+      "data": "23/6/2018",
+      "codGenere": 2,
+      "codCitta": 6,
+      "dettagli": "dettagli concerto 13"
+    },
+    {
+      "id": 14,
+      "cantante": "andy",
+      "data": "24/6/2018",
+      "codGenere": 2,
+      "codCitta": 7,
+      "dettagli": "dettagli concerto 14"
+    },
+    {
+      "id": 15,
+      "cantante": "pippo",
+      "data": "11/7/2018",
+      "codGenere": 3,
+      "codCitta": 1,
+      "dettagli": "dettagli concerto 16"
+    },
+    {
+      "id": 16,
+      "cantante": "pluto",
+      "data": "12/7/2018",
+      "codGenere": 3,
+      "codCitta": 2,
+      "dettagli": "dettagli concerto 16"
+    },
+    {
+      "id": 17,
+      "cantante": "minnie",
+      "data": "13/7/2018",
+      "codGenere": 3,
+      "codCitta": 3,
+      "dettagli": "dettagli concerto 16"
+    },
+    {
+      "id": 18,
+      "cantante": "jenny",
+      "data": "14/7/2018",
+      "codGenere": 3,
+      "codCitta": 4,
+      "dettagli": "dettagli concerto 18"
+    },
+    {
+      "id": 19,
+      "cantante": "sonny",
+      "data": "15/7/2018",
+      "codGenere": 3,
+      "codCitta": 5,
+      "dettagli": "dettagli concerto 19"
+    },
+    {
+      "id": 20,
+      "cantante": "fanny",
+      "data": "16/7/2018",
+      "codGenere": 3,
+      "codCitta": 6,
+      "dettagli": "dettagli concerto 20"
+    },
+    {
+      "id": 21,
+      "cantante": "jmmy",
+      "data": "17/7/2018",
+      "codGenere": 3,
+      "codCitta": 7,
+      "dettagli": "dettagli concerto 21"
+    },
+    {
+      "id": 22,
+      "cantante": "sandy",
+      "data": "18/7/2018",
+      "codGenere": 4,
+      "codCitta": 1,
+      "dettagli": "dettagli concerto 22"
+    },
+    {
+      "id": 23,
+      "cantante": "sally",
+      "data": "19/7/2018",
+      "codGenere": 4,
+      "codCitta": 2,
+      "dettagli": "dettagli concerto 23"
+    },
+    {
+      "id": 24,
+      "cantante": "ronny",
+      "data": "20/7/2018",
+      "codGenere": 4,
+      "codCitta": 3,
+      "dettagli": "dettagli concerto 23"
+    },
+    {
+      "id": 25,
+      "cantante": "daisy",
+      "data": "21/7/2018",
+      "codGenere": 4,
+      "codCitta": 4,
+      "dettagli": "dettagli concerto 25"
+    },
+    {
+      "id": 26,
+      "cantante": "emma",
+      "data": "22/7/2018",
+      "codGenere": 4,
+      "codCitta": 3,
+      "dettagli": "dettagli concerto 26"
+    },
+    {
+      "id": 27,
+      "cantante": "elly",
+      "data": "23/7/2018",
+      "codGenere": 4,
+      "codCitta": 4,
+      "dettagli": "dettagli concerto 27"
+    },
+    {
+      "id": 28,
+      "cantante": "andy",
+      "data": "24/7/2018",
+      "codGenere": 4,
+      "codCitta": 5,
+      "dettagli": "dettagli concerto 28"
+    }
+  ]
 }

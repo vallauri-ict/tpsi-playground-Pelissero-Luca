@@ -13,11 +13,11 @@ $(document).ready(function() {
     let _domande = $(".domande")
 
     /* ******************************* */
-
     _login.show()
     _test.hide()
     _lblErrore.hide()
     let idStudente;
+
 
     _btnLogin.on("click", function() {
         let user = _txtUsr.val();
@@ -121,5 +121,4 @@ $(document).ready(function() {
             })
         })
     }
-
 });

@@ -1,0 +1,57 @@
+<!doctype  html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8"/> 
+	    <title>Insert</title>
+		<script type="application/javascript" src="../jquery.js"> </script>
+		<script text='application/javascript' src="inserisci.js"> </script>	
+		<style>
+			form{
+			    width:400px;	
+                margin:10px auto;
+				border:1px solid black;	
+				padding:20px 0;				
+			}
+			form div{
+			    width:240px;
+				margin:0 auto
+			}
+			form label{
+				width:100px;
+				display:block;
+				float:left;
+				margin-bottom:10px;
+			}
+			form input[type=text]{
+			    width:120px;
+				display:block;
+				float:left;	
+				margin-bottom:10px;				
+			}
+			#lblMessaggio{
+			    color:red;
+			}			
+		</style>
+	</head>
+	
+	<body>
+	    <h1 align="center">Inserisci Nuovo CD</h1>
+		<form>
+		<div>
+		<label for="txtInterprete"> Interprete: </label>
+		    <input type="text" name="txtInterprete" id="txtInterprete"/>
+		    <br/> 
+		<label for="txtTitolo"> Titolo: </label>
+		    <input type="text" name="txtTitolo" id="txtTitolo"/>
+		    <br/>
+		<label for="txtAnno"> Anno: </label>
+			<input type="text" name="txtAnno" id="txtAnno"/>
+		    <br/>
+
+		<button type='button' id="btnInvia"> Invia </button>
+		</div>
+		</form>
+		<div id="lblMessaggio"> </div>
+
+	</body>
+</html>

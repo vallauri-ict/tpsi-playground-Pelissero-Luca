@@ -1,0 +1,135 @@
+html{
+	background-color:black;
+	color:white;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+#wrapper {
+	width: 1200px;	
+	text-align: center;
+	margin:15px auto;
+	user-select:none;
+}
+
+#wrapper h1{
+	padding-bottom:10px;
+	font-size:30pt;
+}
+#wrapper h2{
+	padding-bottom:12px;
+	margin-bottom:20px;
+}
+
+
+/* *********************** intestazione ************************ */
+
+#div_Film .intestazione select{
+	margin-right:30px;
+	height:28px;	 
+}
+
+#div_Film .intestazione input{
+	transform: scale(1.8);
+	margin-right:10px;
+}
+
+#div_Film .intestazione span{
+	font-size:14pt;
+	margin-right:30px;
+}
+
+#div_Film .intestazione button{
+	border:0;
+}
+
+#div_Film .intestazione button img{
+	width:70px;
+	vertical-align:middle;
+}
+
+#div_Film .intestazione button:hover{
+	cursor:pointer;
+}
+
+/* *********************** elenco film ************************ */
+
+#div_Film .elencoFilm {
+	display: flex;  
+	flex-wrap:wrap;
+}
+
+#div_Film .elencoFilm  div{
+   width: 188px;   
+   height: 249px;  
+   /* margin: auto;  */
+   justify-content:flex-start;
+   align-content:flex-start;
+   align-items:flex-start;
+}
+
+#div_Film .elencoFilm div img{
+	padding-top:15px;
+	width:173px;
+	cursor:pointer;
+}
+
+/* ************************* dettagli *************************** */
+
+#div_Dettagli{
+	width:700px;
+	height:350px;
+	margin:30px auto;
+	border:1px solid #666;
+}
+
+#div_Dettagli div.detail-close {
+    text-align: right;
+	margin-top: 10px;
+    margin-right: 20px;
+}
+
+#div_Dettagli div.detail-close span{
+   cursor:pointer;
+}
+
+#div_Dettagli > img{
+	float:left;
+    width: 188px;   
+    height: 249px;  
+	margin:15px;
+}
+
+#div_Dettagli p:nth-of-type(1){
+	font-size:20pt;
+	font-weight:bold;
+	padding-top:15px;
+}
+
+#div_Dettagli p:nth-of-type(2){
+	font-style:italic;
+	margin-bottom:20px;
+}
+#div_Dettagli p:nth-of-type(3){
+	margin-bottom:20px;
+}
+
+#div_Dettagli button{
+	border:0;
+	height:38px;
+}
+
+#div_Dettagli button img{
+	width:140px;
+	margin:0;
+}
+
+/* ************************* riproduzione *************************** */
+#div_Riproduzione video{
+	width:800px;
+}
+
+

@@ -1,0 +1,210 @@
+{
+  "generi": [
+    {
+      "id": 1,
+      "nome": "commedia"
+    },
+    {
+      "id": 2,
+      "nome": "documentario"
+    },
+    {
+      "id": 3,
+      "nome": "azione / avventura"
+    },
+    {
+      "id": 5,
+      "nome": "sentimentale"
+    },
+    {
+      "id": 6,
+      "nome": "drammatico"
+    },
+    {
+      "id": 7,
+      "nome": "giallo"
+    }
+  ],
+  "film": [
+    {
+      "id": 1,
+      "titolo": "aria",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 104,
+      "genere": 2,
+      "anno": 2020,
+      "descrizione": "Un racconto a più voci, dall'Italia e dal mondo, della vita nel tempo sospeso della pandemia"
+    },
+    {
+      "id": 2,
+      "titolo": "beata ignoranza",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 104,
+      "genere": 1,
+      "anno": 2017,
+      "descrizione": "Ernesto e Filippo, vecchi amici, non si vedono da 25 anni: ad allontanarli è stato l'amore per la stessa donna, Marianna, e la nascita di una figlia, Nina. Ora si ritrovano ad insegnare nello stesso liceo e a dividerli ulteriormente è il loro rapporto con la tecnologia: Ernesto inorridisce davanti al dilagare dei social media, Filippo invece vive di selfie e chat."
+    },
+    {
+      "id": 3,
+      "titolo": "black sea",
+      "prezzo": "free",
+      "nVisualizzazioni": 102,
+      "genere": 3,
+      "anno": 2014,
+      "descrizione": "Il capitano Robinson, frustrato da una vita fallimentare, accetta di guidare una missione clandestina nel Mar Nero. L'obiettivo è il recupero di un relitto di un sottomarino russo carico di oro diretto verso la Germania nazista."
+    },
+    {
+      "id": 4,
+      "titolo": "il giorno in più",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 5,
+      "anno": 2011,
+      "descrizione": "Giacomo ha quarant'anni, molte donne e poca voglia di impegnarsi in una relazione seria nonostante tutti cerchino di convincerlo ad accasarsi. Fino a quando non incontra una ragazza sul tram. Tratto dall'omonimo best-seller di Fabio Volo."
+    },
+    {
+      "id": 5,
+      "titolo": "io sono tempesta",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 102,
+      "genere": 1,
+      "anno": 2017,
+      "descrizione": "Numa Tempesta è un finanziere che gestisce un fondo da un miliardo e mezzo di euro che abita da solo in un immenso hotel completamente deserto. Un giorno la legge gli presenta il conto: a causa di una vecchia condanna per evasione fiscale deve scontare un anno di pena ai servizi sociali in un centro di accoglienza. Lì incontra un giovane padre ridotto sul lastrico e si mette in affari con lui."
+    },
+    {
+      "id": 6,
+      "titolo": "la la land",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 5,
+      "anno": 2016,
+      "descrizione": "A Los Angeles Mia sogna di recitare e, tra un provino e l'altro, serve caffè e cappuccini alle star; Sebastian è un musicista jazz che suona nei piano bar. I due si incontrano e nasce una travolgente passione, nutrita anche dalla comune volontà di realizzare i propri sogni, ma quando il successo arriverà cosa accadrà alla loro relazione?"
+    },
+    {
+      "id": 7,
+      "titolo": "la tenerezza",
+      "prezzo": "free",
+      "nVisualizzazioni": 100,
+      "genere": 6,
+      "anno": 2020,
+      "descrizione": "Sentimenti che si incrociano tra il sorriso e la violenza. Un padre e i suoi figli non amati, un fratello e una sorella in conflitto, una giovane coppia che sembra serena. E i bambini che vedono e non possono ribellarsi. David di Donatello per Renato Carpentieri."
+    },
+    {
+      "id": 8,
+      "titolo": "posh",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 6,
+      "anno": 2014,
+      "descrizione": "Dieci studenti dell'Università di Oxford entrano a far parte del prestigioso ed esclusivo Riot Club. Ma, durante la cena annuale, la situazione degenera tragicamente. Dalla omonima pièce teatrale di Laura Wade"
+    },
+    {
+      "id": 9,
+      "titolo": "pure",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 102,
+      "genere": 1,
+      "anno": 2019,
+      "descrizione": "Marnie è una ventiquattrenne che ha continui pensieri ossessivi in cui immagina tutti quelli che incontra in situazioni erotiche. In preda al panico, scappa dal suo paesino in Scozia e arriva a Londra. Tra le trappole e le tentazioni della grande città cercherà sé stessa e proverà ad accettarsi. Tratta dall'omonima autobiografia di Rose Cartwright."
+    },
+    {
+      "id": 10,
+      "titolo": "Quello che veramente importa",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 6,
+      "anno": 2017,
+      "descrizione": "Nel giorno del suo trentesimo compleanno, Alec viene a sapere di appartenere ad una famiglia con il dono della guarigione. E' un dono che non è destinato a tutti, ma inizialmente lui lo rifiuta"
+    },
+    {
+      "id": 11,
+      "titolo": "rosso istanbul",
+      "prezzo": "free",
+      "nVisualizzazioni": 102,
+      "genere": 6,
+      "anno": 2017,
+      "descrizione": "Orhan Sahin torna da londra nella propria città natale dopo vent'anni. Deniz Soysal, regista turco di fama internazionale, gli vuole affidare le bozze del libro autobiografico a cui sta lavorando e gli fa conoscere i personaggi del romanzo in carne ed ossa. Poi, una notte sparisce nel nulla e lo lascia in loro compagnia nella sua villa affacciata sul Bosforo. Ohran viene così risucchiato nella vita di Deniz e finisce per riscoprire sentimenti che credeva morti per sempre."
+    },
+    {
+      "id": 12,
+      "titolo": "silence",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 6,
+      "anno": 2016,
+      "descrizione": "XVII secolo. Padre Sebastian Rodrigues e padre Francisco Garupe, due giovani missionari gesuiti portoghesi, intraprendono un lungo viaggio, irto di pericoli, per raggiungere il Giappone e andare alla ricerca del loro insegnante e mentore, padre Christovao Ferreira, che si dice abbia rinnegato la sua fede. Candidato all'Oscar per la Miglior fotografia a Rodrigo Prieto."
+    },
+    {
+      "id": 13,
+      "titolo": "soldado",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 3,
+      "anno": 2018,
+      "descrizione": "Nella guerra di droga al confine fra Messico e Stati Uniti non ci sono regole. Per combattere i narcos, l'agente federale Matt Graver ingaggia il misterioso Alejandro, la cui famiglia è stata sterminata da un boss."
+    },
+    {
+      "id": 14,
+      "titolo": "stai lontana da me",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 1,
+      "anno": 2013,
+      "descrizione": "Jacopo è un terapista di coppia ma la sua vita sentimentale è a pezzi: ogni volta che prova ad avvicinarsi ad una donna la sorte si accanisce contro di lei. Quando incontra Sara, quella che sembra finalmente la donna giusta, il copione si ripete inevitabilmente."
+    },
+    {
+      "id": 15,
+      "titolo": "stray dogs",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 6,
+      "anno": 2013,
+      "descrizione": "Un uomo, una donna, due figli e le loro difficoltà economiche. Dormono dove capita, si lavano nei bagni pubblici, vivono come possono ai margini della metropoli di Taipei. Presentato e premiato al Festival di Venezia,"
+    },
+    {
+      "id": 16,
+      "titolo": "the equalizer 2",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 3,
+      "anno": 2018,
+      "descrizione": "Robert McCall, in passato agente segreto, si guadagna da vivere facendo l'autista. Si trova costretto a rientrare in azione quando la sua amica Susan, indagando, cade in un tranello e viene uccisa."
+    },
+    {
+      "id": 17,
+      "titolo": "the salvation",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 6,
+      "anno": 2014,
+      "descrizione": "West, 1870. Quando la moglie e il figlio del colonizzatore europeo Jon vengono brutalmente uccisi, l'uomo si mette alla ricerca del mandante. E' tempo di vendetta."
+    },
+    {
+      "id": 18,
+      "titolo": "un piccolo favore",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 100,
+      "genere": 7,
+      "anno": 2018,
+      "descrizione": "Stephanie, giovane mamma single del piccolo Miles, si diverte a gestire un popolare blog di cucina. La sua vita è stravolta dall'incontro con Emily, madre eccentrica e carismatica di un compagno di scuola di Miles."
+    },
+    {
+      "id": 19,
+      "titolo": "veleno",
+      "prezzo": "3 €",
+      "nVisualizzazioni": 101,
+      "genere": 6,
+      "anno": 2017,
+      "descrizione": "Cosimo, allevatore di bufale, rifiuta di svendere la sua terra alla famiglia del giovane candidato sindaco del suo paese. Quando scopre di essere malato di tumore, provocato dai rifiuti tossici smaltiti illegalmente nelle campagne della Terra dei Fuochi, la moglie porterà avanti la sua battaglia."
+    },
+    {
+      "id": 20,
+      "titolo": "vieni a vivere a Napoli",
+      "prezzo": "free",
+      "nVisualizzazioni": 100,
+      "genere": 2,
+      "anno": 2017,
+      "descrizione": "Tre episodi che vedono protagonisti un bambino cinese, una donna ucraina e un ragazzo cingalese. Tre storie di immigrazione tra i cittadini napoletani per raccontare il Meltin Pot di culture che anima la vita della città."
+    }
+  ]
+}

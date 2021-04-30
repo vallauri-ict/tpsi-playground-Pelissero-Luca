@@ -1,3 +1,5 @@
 # tpsi-playground-Pelissero-Luca
 
-### tpsi-playground-Pelissero-Luca created by GitHub Classroom
+_Stud. Pelissero Luca_
+
+### Complesso esercizi di TPSIT di laboratorio sui vari argomenti/linguaggi trattati durante l'anno

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Registrazione</title>
+		<link rel="stylesheet" href="index.css">
+		<script
+  			src="https://code.jquery.com/jquery-3.6.0.js"
+  			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  			crossorigin="anonymous"></script>
+		<script type="application/javascript" src="index.js"></script>
+	</head>
+	
+	<body>
+		<form id="form1">
+		    <h1> Registrati al nostro sito </h1>
+			<span>Nome:</span><br/>
+			<input type="text" name="txtNome" id="txtNome" placeholder="Inserisci qui il tuo nome"/><br/>
+			
+			<span>Indirizzo di studio:</span><br/>
+			<input type="radio" name="optIndirizzo" value="Informatica"/>Informatica<br/>
+			<input type="radio" name="optIndirizzo" value="Meccanica"/>Meccanica<br/>
+			<input type="radio" name="optIndirizzo" value="Elettrotecnica"/>Elettrotecnica<br/>
+			<input type="radio" name="optIndirizzo" value="Liceo"/>Liceo<br/>
+			
+			<span>Hobbies:</span><br/>
+			<input type="checkbox" name="chkHobbies[]" value="Sport"/>Sport<br/>
+			<input type="checkbox" name="chkHobbies[]" value="Musica"/>Musica<br/>
+			<input type="checkbox" name="chkHobbies[]" value="Cinema"/>Cinema<br/>
+			<input type="checkbox" name="chkHobbies[]" value="Lettura"/>Lettura<br/>
+			
+			<span>Città di residenza:</span><br/>
+			<select name="lstCitta">
+				<option value="1">Fossano</option>
+				<option value="2">Cuneo</option>
+				<option value="3">Torino</option>
+				<option value="4">Alba</option>
+			</select> 
+			<br/>
+			
+			<span>Segni particolari:</span> </br>
+			<textarea name="txtSegni"></textarea>
+			</br>
+			
+			<span>Come hai scoperto la scuola:</span><br/>
+			<select name="lstScoperta[]" multiple size="4">
+				<option value="1">Giornali</option>
+				<option value="2">Amici</option>
+				<option value="3">Web</option>
+				<option value="4">Altro</option>
+			</select>
+			<br/>
+			
+			<input type="button" value="Invia" id="btnInvia">
+			<!--<input type="submit" formaction="registrazione.php" formmethod="get" value="Invia"/>-->
+			<br/>
+			<div id="msg" style="color: red"></div>
+		</form>
+		
+	</body>
+</html>

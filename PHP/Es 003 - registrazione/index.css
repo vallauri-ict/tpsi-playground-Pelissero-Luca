@@ -1,0 +1,30 @@
+h1{
+	text-align:center;
+	margin:20px;
+}
+
+h2{
+	text-align:center;
+	margin:20px;
+}
+
+form{
+	margin:0 auto; 
+	width:400px;
+}
+
+form h2{
+   margin-top:25px;
+   margin-bottom:10px;
+   text-align:center;
+}
+
+form span,  form input[type=button] {
+   display:inline-block;
+   margin:10px;
+   margin-top:20px;
+}
+
+form input, form select, form textarea{
+	margin-left:35px;
+}

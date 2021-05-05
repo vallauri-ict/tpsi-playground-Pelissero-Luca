@@ -1,6 +1,6 @@
 <?php 
 
-function _connection($dbName)
+function _openConnection($dbName)
 {
     define('DBHOST', 'localhost'); // dominio del server
     define('DBUSER', 'root');      // utente
@@ -26,6 +26,7 @@ function _eseguiQuery($con, $sql)
     }
     catch (mysqli_sql_exception $ex)
     {
+        $con->close();
         die("Errore nella query sql: <br>". $ex->getMessage());
     }
 

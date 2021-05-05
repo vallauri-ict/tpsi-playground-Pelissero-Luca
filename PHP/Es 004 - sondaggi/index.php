@@ -8,10 +8,9 @@
 	integrity="sha256-H+K7U5CnX"
 	crossorigin="anonymus"</script>
 	<link rel="stylesheet" href="index.css"/>
-	<script type="application/javascript" src="index.js"> </script>
 </head>
 
-	<body>
+	<body style="text-align: center;">
 		<?php
 			require("php-mysqli.php");
 		?>
@@ -25,22 +24,27 @@
 				<?php
 					// step 1: no perchè non passiamo parametri
 					// step 2: connessione
-					$con = _connection("4b_sondaggi");
+					$con = _openConnection("4b_sondaggi");
 					// step 3: esecuzione query
 					$sql = "SELECT id,titolo FROM sondaggi";
 					$rs = _eseguiQuery($con,$sql);
 					// step 4: visualizzazione dati
 					foreach($rs as $item)
 					{
-						$nome = $item["titolo"];
-						$id = $item["id"];
-						echo("<option value=$id>$nome</option>");
+						$titolo = $item["titolo"];
+						echo("<option value=$item[id]>$titolo</option>");
+						// se voglio usare una variabile composta all'interno di una echo
+						// è possibile ma occorre omettere gli apici attorno al nome del campo
 					}
 				?>
 			</select>
 			<input type="submit" value="invia">
 		</form>
-
+		
+		<?php
+			// step 5: chiusura connessione
+			$con->close();
+		?>
 
 	</body>
 </html>

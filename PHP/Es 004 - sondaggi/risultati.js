@@ -16,6 +16,9 @@ function creaDiagramma(si, no, ns) {
                 ],
                 borderWidth: 1
             }]
+        },
+        options: {
+            // responsive: false
         }
     });
 }

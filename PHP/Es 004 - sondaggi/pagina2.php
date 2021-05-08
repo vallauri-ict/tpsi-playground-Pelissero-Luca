@@ -26,6 +26,11 @@
 			// * prende tutti i campi
 			// WHERE (selezioneìa le righe) si usa per prendere solo il campo seguente
             $rs = _eseguiQuery($con,$sql)[0]; // restituisce SEMPRE un vettore enumerativo
+
+			// controllo sui cookies
+			if (isset($_COOKIE["sondoggio-".$id]) && $_COOKIE["sondaggio-$id"]) {
+				die("non puoi votare una seconda volta il sondoggio $rs[titolo]");
+			}
             
 			// step 4: visualizzazione dati
             echo("<h1> Sondaggio su : $rs[titolo] </h1>");

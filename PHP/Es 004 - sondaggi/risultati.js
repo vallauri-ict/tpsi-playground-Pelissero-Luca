@@ -14,6 +14,12 @@ function creaDiagramma(si, no, ns) {
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)'
                 ],
+                borderColor: [
+                    'rgba(255, 255, 255)'
+                ],
+                color: [
+                    '#fff'
+                ],
                 borderWidth: 1
             }]
         },

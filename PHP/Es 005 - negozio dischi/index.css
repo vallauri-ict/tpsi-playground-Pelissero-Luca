@@ -1,12 +1,16 @@
-#table>div {
+#table > div {
     display: grid;
-    grid-template-columns: 100px 200px 200px 100px 120px 120px;
+    grid-template-columns: 100px 200px 200px 100px 90px 90px 90px;
     grid-column-gap: 10px;
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 #table {
     margin: 0 auto;
     width: fit-content;
     border: 1px solid black;
+}
+
+button {
+    margin: 3px;
 }

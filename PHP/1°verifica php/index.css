@@ -1,0 +1,83 @@
+h1{
+	text-align:center;
+	margin:20px;
+}
+
+#divRicerca {
+	width:570px;
+	margin:15px auto; 	
+	text-align:center;
+}  
+
+#divRicerca > input[type=text]{  
+    width:440px;
+	font-size:15pt;
+	height:26px;
+	border: 2px solid black;
+}
+
+table{
+	width:570px; 
+	margin:25px auto;
+}
+
+#divDettagli {
+	width:750px;
+	margin:15px auto; 	
+	text-align:center;
+	border:1px solid #ccc;
+} 
+
+
+
+
+table th:nth-of-type(1), table td:nth-of-type(1) {
+	width:10%;
+	text-align:center;
+	background-color:#AFA;	
+    height:30px;	
+}
+table th:nth-of-type(2), table td:nth-of-type(2){
+	width:21%;
+	text-align:center;
+	background-color:#EEE;
+}
+table th:nth-of-type(3), table td:nth-of-type(3){
+	width:18%;
+	text-align:center;
+	background-color:#AFA;
+}
+table th:nth-of-type(4),table td:nth-of-type(4){
+	width:15%;
+	text-align:center;
+	background-color:#EEE;
+}
+table th:nth-of-type(5), table td:nth-of-type(5){
+	width:10%;
+	text-align:center;
+	background-color:#AFA;
+}
+table th:nth-of-type(6), table td:nth-of-type(6){
+	width:26%;
+	text-align:center;
+	background-color:#EEE;
+}
+table input[type=text]{
+	width:45px;
+	margin-right:6px;
+}
+table input[type=button]{
+	padding-left:4px;
+	padding-right:4px;
+}
+
+.descrizione{
+	width:450px;
+	margin:10px auto;
+}
+
+.mappa{
+	width:750px;
+	height:600px;
+	margin:10px auto;		
+}

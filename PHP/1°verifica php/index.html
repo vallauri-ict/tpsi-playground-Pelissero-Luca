@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Borsa Italiana </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css" />
+    <script src="jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZKYgxbiyRE7DknUpnRP2QHCBVjvLgH7g">
+    </script>
+    <script src="libreria.js">
+    </script>
+    <script src="index.js">
+    </script>
+</head>
+
+<body>
+    <h1> Borsa Italiana </h1>
+    <div id="divRicerca">
+        <input type="text" />
+        <input type="button" value="cerca" />
+    </div>
+
+    <table border=1 align='center'>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>titolo</th>
+                <th style="font-size:9pt">ultimoContratto</th>
+                <th>volumi</th>
+                <th style="font-size:9pt">Dettagli</th>
+                <th>Acquista</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <div id="divDettagli">
+        <div class="descrizione"> </div>
+        <div class="mappa"> </div>
+    </div>
+
+</body>
+
+</html>

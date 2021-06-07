@@ -1,0 +1,33 @@
+<!doctype  html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8"/> 
+	    <title> upload </title>
+	</head>
+
+	
+	<body>
+	<h1 align="center">Upload</h1>
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+	
+		<label>
+			Nome:
+			<input type="text" name="txtUser" value="pippo">
+		</label><br><br><br>
+
+		
+		
+		<label>
+			Scegli un file:
+			<input type="file" name="txtFiles[]"  multiple> 
+		</label><br><br><br>
+
+		
+		<input type="checkbox" name='chkOverwrite' value="ok">
+            Sovrascrivi file esistenti
+		<input type="submit" value="upload">	
+		
+	</form>
+	</body>
+	
+</html>

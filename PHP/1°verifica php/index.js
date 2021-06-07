@@ -115,7 +115,8 @@ $(document).ready(function() {
                         })
                     } else
                         alert("Stringa immessa non valida");
-                });
+                }
+            );
         })
     }
 });
